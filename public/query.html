@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<>
+    <h1>Query data</h1>
+    <script>
+        var myList = [];
+
+        getData();
+        async function getData() {
+            const response  = await fetch('/all');
+            myList = await response.json();
+            console.log(myList);
+
+            for(item of myList) {
+                const root = document.createElement('div');
+                const name = document.createElement('div');
+                const response = document.createElement('div');
+                const date = document.createElement('div');
+
+                name.textContent = `Name: ${item.first_name} ${item.last_name}`;
+                let string = '';
+                for (res of item.answer_key) {
+                    string += `${res.num}:${res.response} `
+                }
+                response.textContent = `Response: ${string}`;
+                const dateString = new Date(item.timestamp).toLocaleString();
+                date.textContent = dateString;
+
+                root.append(name,date,response);
+                document.body.append(root);
+            }
+        }
+
+        // Builds the HTML Table out of myList.
+        function buildHtmlTable(selector) {
+        var columns = addAllColumnHeaders(myList, selector);
+
+        for (var i = 0; i < myList.length; i++) {
+            var row$ = $('<tr/>');
+            for (var colIndex = 0; colIndex < columns.length; colIndex++) {
+            var cellValue = myList[i][columns[colIndex]];
+            if (cellValue == null) cellValue = "";
+            row$.append($('<td/>').html(cellValue));
+            }
+            $(selector).append(row$);
+        }
+        }
+
+        // Adds a header row to the table and returns the set of columns.
+        // Need to do union of keys from all records as some records may not contain
+        // all records.
+        function addAllColumnHeaders(myList, selector) {
+        var columnSet = [];
+        var headerTr$ = $('<tr/>');
+
+        for (var i = 0; i < myList.length; i++) {
+            var rowHash = myList[i];
+            for (var key in rowHash) {
+            if ($.inArray(key, columnSet) == -1) {
+                columnSet.push(key);
+                headerTr$.append($('<th/>').html(key));
+            }
+            }
+        }
+        $(selector).append(headerTr$);
+
+        return columnSet;
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <body onLoad="buildHtmlTable('#excelDataTable')">
+      <table id="excelDataTable" border="1">
+      </table>
+    </body>
+</html>

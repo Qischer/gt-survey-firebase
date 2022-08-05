@@ -1,0 +1,256 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: rgb(242, 226, 245);
+}
+
+section .content .logo img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+section{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  padding: 20px 30px;
+  margin: auto;
+}
+
+.logo img {
+  max-height: 100px;
+}
+
+.qlist {
+    margin: auto;
+    align-items: center;
+}
+
+.headline p {
+  margin-top: 10vh;
+  margin-left: 20vh;
+  margin-right: 20vh;
+  justify-content: center;
+}
+
+section .headline {
+  width: 80%;
+  height: 20vh;
+  display:block;
+  margin: auto;
+  padding-top: 10pt;
+  justify-content: center;
+  align-items: center;
+  animation: fadein 8s;
+  -webkit-animation: fadein 8s;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.question {
+    width: 80%;
+    height: auto;
+    display:block;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    justify-content: center;
+    
+    align-items: left;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+div #q1 {
+  /* border: solid red 1px; */
+}
+
+#q8 .btn_wrapper {
+  margin-bottom: 30pt;
+}
+
+.btn_wrapper {
+  padding: 10px;
+}
+
+.question p {
+  padding: 30px 20px 0px 20px;
+  font-weight: bold;
+}
+
+.question .label {
+  font-size: 11pt;
+  color: #333;
+}
+
+.submit {
+  width: 80%;
+  height: auto;
+  display:block;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: left;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.submit .text_wrapper {
+  margin: 20px;
+  margin-bottom: 0px;
+  padding-top: 20px;
+
+}
+
+.submit .btn {
+  display:block;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  justify-content: center;
+  align-items: left;
+}
+
+.multi-choice {
+  margin: 0px 20px 0px 20px;
+  padding: 30px 10px 30px 10px;
+  /* display: flex; */
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+
+
+.custom-radio-btn {
+  --size: 25px;
+  min-width: var(--size);
+  height: auto;
+  border-radius: 50%;
+  display:block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  /* changes from the video   */
+
+  margin: 0 10px;
+  position: relative;
+  padding-left: var(--size);
+
+}
+
+.custom-radio-btn input {
+  display: none;
+}
+
+/* handle if you want label on the left of the checkmark instead */
+/* .custom-radio-btn.left {
+  padding-left: 0;
+  padding-right: var(--size);
+} */
+
+/* label  */
+
+.custom-radio-btn .label {
+  margin-left: 5px;
+}
+
+
+.custom-radio-btn[aria-label]::after {
+  content: attr(aria-label);
+  display: inline-block;
+  margin-left: 5px;
+}
+
+/* checkmark */
+
+.custom-radio-btn .checkmark {
+  --gap: 3px;
+  --border: 2px;
+  --check-color: #49317c;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 50%;
+  display: inline-block;
+  transition: opacity 0.5s ease;
+  /* changes from the video  */
+
+  border: var(--border) solid #444;
+  padding: var(--gap);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 60%;
+}
+
+.custom-radio-btn:hover .checkmark{
+  opacity: 100%;
+}
+
+.custom-radio-btn.left .checkmark {
+  left: auto;
+  right: 0;
+}
+
+.custom-radio-btn input:checked + .checkmark {
+  /* changes from the video  */
+
+  /*  content box origin will make sure the bg-image only stays inside content area in between padding  */
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  opacity: 100%;
+  background-image: radial-gradient(
+    circle at center,
+    var(--check-color)
+      /* the size of the check mark is determined by subtracting from the size of the circle
+      the border(both sides) and the gap(both sides) than dividing it by 2 to get the radius of the circle        */
+        calc((var(--size) - (var(--border) * 2) - (var(--gap) * 2)) / 2),
+    rgba(255, 255, 255, 0) 0);
+}
+
+.reveal {
+  position: relative;
+  opacity: 0;
+}
+
+.reveal.active {
+  opacity: 1;
+}
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
