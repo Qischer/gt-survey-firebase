@@ -46,6 +46,7 @@ btn.addEventListener("click", async (e) => {
     const name = document.getElementById("name").value;
     const division = document.getElementById("division").value;
     const email = document.getElementById("email").value;
+    const sdt = document.getElementById("sdt").value;
     let entry = {};
     var check = true;
 
@@ -68,7 +69,14 @@ btn.addEventListener("click", async (e) => {
         check &= answered;
     }
 
-    const data = { name: name, division: division, email: email, answer_key: entry };
+    if(name == "" || email == "" || division == "" || sdt == "") {
+        document.getElementById("info_box").style.border = "solid red 1px";
+        check = false;
+    } else {
+        check = true;
+    }
+
+    const data = { name: name, division: division, email: email, sdt: sdt, answer_key: entry };
 
     e.preventDefault();
     console.log(data);
@@ -76,7 +84,7 @@ btn.addEventListener("click", async (e) => {
     if (check) {
         const docRef = await addDoc(collection(db, "collection"),data);
         console.log("Document written with ID: ", docRef.id);
-        window.location.href = "/thankyou.html?key=" + entry['1'];
+        window.location.href = "/thankyou?key=" + entry['1'];
     }
 });
 

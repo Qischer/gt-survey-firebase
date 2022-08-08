@@ -13,6 +13,7 @@
     </div>
     <div class="box">
         <h1> THANK YOU FOR COMPLETING THE SURVEY! </h1>
+        <a id="redirect" href="#" download> Download pdf </a>
     </div>
     
     <style>
@@ -51,54 +52,17 @@
     </style>
     <script type = "module">
         const key = {
-            'a': '1. Apparel, footwear and accessories_KPI_Assessment.pdf',
-            'b': '2. Manufacturing_KPI_Assessment.pdf',
-            'c': '3. Professional Services_KPI_Assessment.pdf',
-            'd': '4. Retail_KPI_Assessment.pdf',
-            'e': '5. Wholesale Distribution_KPI_Assessment.pdf',
-            'f': '6. Food and Beverage_KPI_Assessment.pdf'
+            'a': 'downloadable/1. Apparel, footwear and accessories_KPI_Assessment.pdf',
+            'b': 'downloadable/2. Manufacturing_KPI_Assessment.pdf',
+            'c': 'downloadable/3. Professional Services_KPI_Assessment.pdf',
+            'd': 'downloadable/4. Retail_KPI_Assessment.pdf',
+            'e': 'downloadable/5. Wholesale Distribution_KPI_Assessment.pdf',
+            'f': 'downloadable/6. Food and Beverage_KPI_Assessment.pdf',
+            'g': 'downloadable/7. Technology_Services_KPI_Assessment.pdf'
         }
 
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.1/firebase-analytics.js"
-        import { getStorage, ref, getDownloadURL } from "firebase/storage";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBzuu0DD6u867h084t-7tKgNsVurQ-K1qI",
-            authDomain: "gt-survey-c5b90.firebaseapp.com",
-            projectId: "gt-survey-c5b90",
-            storageBucket: "gt-survey-c5b90.appspot.com",
-            messagingSenderId: "16239887895",
-            appId: "1:16239887895:web:8cba2f6089b6b574a3fe52",
-            measurementId: "G-XHVQFB473D"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const storage = getStorage();
-
-        getDownloadURL(ref(storage, 'gs://gt-survey-c5b90.appspot.com/1. Apparel, footwear and accessories_KPI_Assessment.pdf'))
-        .then((url) => {
-            // `url` is the download URL for 'images/stars.jpg'
-
-            // This can be downloaded directly:
-            const xhr = new XMLHttpRequest();
-            xhr.responseType = 'blob';
-            xhr.onload = (event) => {
-            const blob = xhr.response;
-            };
-            xhr.open('GET', url);
-            xhr.send();
-
-        })
-        .catch((error) => {
-            // Handle any errors
-        });
-
-        const url = new URL(window.location.href);
-        console.log(key[url.searchParams.get('key')]);
-
+        const dlink = key[url.searchParams.get('key')];
+        document.getElementById('redirect').href = dlink;
     </script>
 </body>
 </html>
