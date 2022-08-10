@@ -14,7 +14,6 @@
     <div class="box">
         <h1> THANK YOU FOR COMPLETING THE SURVEY! </h1>
         <a id="redirect" href="#" download> Download pdf </a>
-    </div>
     
     <style>
         body {
@@ -50,7 +49,7 @@
             
         }
     </style>
-    <script type = "module">
+    <script>
         const key = {
             'a': 'downloadable/1. Apparel, footwear and accessories_KPI_Assessment.pdf',
             'b': 'downloadable/2. Manufacturing_KPI_Assessment.pdf',
@@ -58,10 +57,15 @@
             'd': 'downloadable/4. Retail_KPI_Assessment.pdf',
             'e': 'downloadable/5. Wholesale Distribution_KPI_Assessment.pdf',
             'f': 'downloadable/6. Food and Beverage_KPI_Assessment.pdf',
-            'g': 'downloadable/7. Technology_Services_KPI_Assessment.pdf'
         }
 
+        const url = new URL(window.location.href);
+        console.log(url);
+        console.log(url.searchParams.get('key'));
+        console.log(key[url.searchParams.get('key')]);
         const dlink = key[url.searchParams.get('key')];
+        console.log(dlink);
+
         document.getElementById('redirect').href = dlink;
     </script>
 </body>

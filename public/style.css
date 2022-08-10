@@ -76,7 +76,7 @@ div #q1 {
 }
 
 #q8 .btn_wrapper {
-  margin-bottom: 30pt;
+  margin-bottom: 10pt;
 }
 
 .btn_wrapper {
@@ -130,94 +130,7 @@ div #q1 {
   box-sizing: border-box;
 }
 
-
-
-.custom-radio-btn {
-  --size: 25px;
-  min-width: var(--size);
-  height: auto;
-  border-radius: 50%;
-  display:block;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  /* changes from the video   */
-
-  margin: 0 10px;
-  position: relative;
-  padding-left: var(--size);
-
-}
-
-.custom-radio-btn input {
-  display: none;
-}
-
-/* handle if you want label on the left of the checkmark instead */
-/* .custom-radio-btn.left {
-  padding-left: 0;
-  padding-right: var(--size);
-} */
-
-/* label  */
-
-.custom-radio-btn .label {
-  margin-left: 5px;
-}
-
-
-.custom-radio-btn[aria-label]::after {
-  content: attr(aria-label);
-  display: inline-block;
-  margin-left: 5px;
-}
-
-/* checkmark */
-
-.custom-radio-btn .checkmark {
-  --gap: 3px;
-  --border: 2px;
-  --check-color: #49317c;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 50%;
-  display: inline-block;
-  transition: opacity 0.5s ease;
-  /* changes from the video  */
-
-  border: var(--border) solid #444;
-  padding: var(--gap);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 60%;
-}
-
-.custom-radio-btn:hover .checkmark{
-  opacity: 100%;
-}
-
-.custom-radio-btn.left .checkmark {
-  left: auto;
-  right: 0;
-}
-
-.custom-radio-btn input:checked + .checkmark {
-  /* changes from the video  */
-
-  /*  content box origin will make sure the bg-image only stays inside content area in between padding  */
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  opacity: 100%;
-  background-image: radial-gradient(
-    circle at center,
-    var(--check-color)
-      /* the size of the check mark is determined by subtracting from the size of the circle
-      the border(both sides) and the gap(both sides) than dividing it by 2 to get the radius of the circle        */
-        calc((var(--size) - (var(--border) * 2) - (var(--gap) * 2)) / 2),
-    rgba(255, 255, 255, 0) 0);
-}
-
+/* Web reveal */
 .reveal {
   position: relative;
   opacity: 0;
@@ -241,16 +154,30 @@ div #q1 {
   }
 }
 
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+/* Textboxes */
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
+
+button[id=submit] {
+  width: 100%;
+  background-color: #49317c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* 
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+} */
