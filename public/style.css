@@ -20,6 +20,10 @@ section{
   align-items: center;
 }
 
+.space {
+  min-height: 30vh;
+}
+
 .logo {
   padding: 20px 30px;
   margin: auto;
