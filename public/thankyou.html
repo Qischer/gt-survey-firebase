@@ -67,11 +67,11 @@
         }
 
         const url = new URL(window.location.href);
-        // console.log(url);
-        // console.log(url.searchParams.get('key'));
-        // console.log(key[url.searchParams.get('key')]);
+        console.log(url);
+        console.log(url.searchParams.get('key'));
+        console.log("key: " + key[url.searchParams.get('key')]);
         const dlink = key[url.searchParams.get('key')];
-        // console.log(dlink);
+        console.log(dlink);
 
         document.getElementById('redirect').href = dlink;
     </script>

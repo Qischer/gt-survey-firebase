@@ -6,7 +6,7 @@ body {
     background-color: rgb(242, 226, 245);
 }
 
-section .content .logo img{
+.content .logo img{
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -38,8 +38,8 @@ section{
     align-items: center;
 }
 
-.headline p {
-  margin-top: 5vh;
+.headline {
+  /* margin-top: 5vh; */
   margin-left: 10vh;
   margin-right: 10vh;
   justify-content: center;
