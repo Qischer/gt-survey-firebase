@@ -64,7 +64,7 @@ btn.addEventListener("click", async (e) => {
         // console.log(elementID, question);
         for (var response of question) {
             if (response.checked) {
-                console.log("response: " + response.value)
+                // console.log("response: " + response.value)
                 if (response.value == "other")
                     entry[i] = "Other: " + document.getElementById(elementID + "_text").value;
                 else
@@ -91,8 +91,8 @@ btn.addEventListener("click", async (e) => {
 
     if (check) {
         const docRef = await addDoc(collection(db, "collection"),data);
-        console.log("Document written with ID: ", docRef.id);
-        // window.location.href = "/thankyou.html?key=" + entry['1'];
+        // console.log("Document written with ID: ", docRef.id);
+        window.location.href = "/thankyou.html?key=" + entry['1'];
     }
 });
 
