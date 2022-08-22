@@ -50,13 +50,21 @@ btn.addEventListener("click", async (e) => {
     let entry = {};
     var check = true;
 
+    if(name == "" || email == "" || division == "" || sdt == "") {
+        document.getElementById("info_box").style.border = "solid red 1px";
+        check = false;
+    } else {
+        check = true;
+    }
     for (var i = 1; i <= qnum ; i++) {
         const elementID = 'q' + i;
         const question = document.getElementsByName(elementID);
         var answered = false;
-
+        var num = 0;
+        // console.log(elementID, question);
         for (var response of question) {
             if (response.checked) {
+                console.log("response: " + response.value)
                 if (response.value == "other")
                     entry[i] = "Other: " + document.getElementById(elementID + "_text").value;
                 else
@@ -64,20 +72,17 @@ btn.addEventListener("click", async (e) => {
                 answered = true;
             }
         }
+
         if (!answered) {
             document.getElementById(elementID).style.border = "solid red 1px";
         } else {
             document.getElementById(elementID).style.border = "";
+
         }
         check &= answered;
     }
 
-    if(name == "" || email == "" || division == "" || sdt == "") {
-        document.getElementById("info_box").style.border = "solid red 1px";
-        check = false;
-    } else {
-        check = true;
-    }
+    
 
     const data = { name: name, division: division, email: email, sdt: sdt, answer_key: entry };
 
@@ -87,7 +92,7 @@ btn.addEventListener("click", async (e) => {
     if (check) {
         const docRef = await addDoc(collection(db, "collection"),data);
         console.log("Document written with ID: ", docRef.id);
-        window.location.href = "/thankyou.html?key=" + entry['1'];
+        // window.location.href = "/thankyou.html?key=" + entry['1'];
     }
 });
 

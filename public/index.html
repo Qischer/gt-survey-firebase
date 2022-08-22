@@ -8,10 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Grant Thornton Survey</title>
 </head>
 <body>
     <script type="module" src="app.js"></script>
+    <script type="module" src="content.js"></script>
     <script>
         function reveal() {
         var reveals = document.querySelectorAll(".reveal");
@@ -31,7 +34,8 @@
 
         window.addEventListener("scroll", reveal);
     </script>
-    <section class ="intro">
+    <div class = "container">
+    <section class ="intro mb-5">
         <div class ="content">
             <div class="logo">
                 <img src="images/grant-thornton.svg" alt="Grant Thornton Logo">
@@ -52,7 +56,7 @@
 
     <section>
         <span class="space"><br><br></span>
-        <div class="container reveal fade-bottom">
+        <div class="reveal fade-bottom">
             <div class = "qlist">
                 <div class = "question" id = "q1">
                     <p>1. Doanh nghiệp bạn thuộc lĩnh vực nào? / <i>What industry does your company belong to? </i></p>
@@ -115,21 +119,21 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q2" name="q2" value="a. 0">
+                                <input type="radio" id="q2" name="q2" value="0">
                                 <span class="label">0</span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q2" name="q2" value="b. 1">
+                                <input type="radio" id="q2" name="q2" value="1">
                                 <span class="label">1</span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q2" name="q2" value="b. Nhiều hơn 1">
+                                <input type="radio" id="q2" name="q2" value="More than 1">
                                 <span class="label">Nhiều hơn 1 / <i>More than 1</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -144,42 +148,42 @@
                         <div class = "multi-choice">
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="a. Misa">
+                                    <input type="checkbox" id="q3" name="q3" value="Misa">
                                     <span class="label">Misa</span>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="b. Fast">
+                                    <input type="checkbox" id="q3" name="q3" value="Fast">
                                     <span class="label">Fast</span>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="c. Microsoft Dynamic">
+                                    <input type="checkbox" id="q3" name="q3" value="Microsoft Dynamic">
                                     <span class="label">Microsoft Dynamic</span>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="d. SAP">
+                                    <input type="checkbox" id="q3" name="q3" value="SAP">
                                     <span class="label">SAP</span>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="e. Odoo">
+                                    <input type="checkbox" id="q3" name="q3" value="Odoo">
                                     <span class="label">Odoo</span>
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
-                                    <input type="checkbox" id="q3" name="q3" value="f. Oracle">
+                                    <input type="checkbox" id="q3" name="q3" value="Oracle">
                                     <span class="label">Oracle </span>
                                     <span class="checkmark"></span>
                                 </label>
@@ -202,29 +206,29 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q4" name="q4" value="a. Ít hơn 100 nhân viên">
+                                <input type="radio" id="q4" name="q4" value="Less than 100 employees">
                                 <span class="label">Ít hơn 100 nhân viên / <i>Less than 100 employees</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q4" name="q4" value="b. Ít hơn 500 nhân viên">
+                                <input type="radio" id="q4" name="q4" value="Less than 500 employees">
                                 <span class="label">Ít hơn 500 nhân viên / <i>Less than 500 employees</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q4" name="q4" value="c. Ít hơn 1,000 nhân viên">
+                                <input type="radio" id="q4" name="q4" value="Less than 1,000 employees">
                                 <span class="label">Ít hơn 1,000 nhân viên / <i>Less than 1,000 employees</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q4" name="q4" value="d. Nhiều hơn 1,000 nhân viên">
-                                <span class="label">Nhiều hơn 1,000 nhân viên / <i>More than  1,000 employees</i></span>
+                                <input type="radio" id="q4" name="q4" value="More than 1,000 employees">
+                                <span class="label">Nhiều hơn 1,000 nhân viên / <i>More than 1,000 employees</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
@@ -246,21 +250,21 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q5" name="q5" value="a">
+                                <input type="radio" id="q5" name="q5" value="We are using email and other communication tools to report work">
                                 <span class="label">Chúng tôi sử dụng email và những công cụ giao tiếp khác để báo cáo công việc / <i>We are using email and other communication tools to report work</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q5" name="q5" value="b">
-                                <span class="label">Chúng tôi có một hệ thống quản lý văn phòng để quản lý công việc (1Office, Microsoft office,...) / <i>We do have an office management system to manage the work (1Office, Microsoft office, )</i></span>
+                                <input type="radio" id="q5" name="q5" value="We do have an office management system to manage the work (1Office, Microsoft office, )">
+                                <span class="label">Chúng tôi có một hệ thống quản lý văn phòng để quản lý công việc (1Office, Microsoft office,...) / <i>We do have an office management system to manage the work (1Office, Microsoft office,... )</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q5" name="q5" value="c">
+                                <input type="radio" id="q5" name="q5" value="We do have an ERP system in place to manage remotely">
                                 <span class="label">Chúng tôi có phần mềm ERP để quản lý từ xa / <i>We do have an ERP system in place to manage remotely</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -283,21 +287,21 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q6" name="q6" value="a">
+                                <input type="radio" id="q6" name="q6" value="Too much redundant paperwork across processes">
                                 <span class="label">Quá nhiều giấy tờ cần lưu trữ giữa các quy trình / <i>Too much redundant paperwork across processes</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q6" name="q6" value="b">
+                                <input type="radio" id="q6" name="q6" value="Long time to generate reports to submit BOD and the data from different sources are not consistent">
                                 <span class="label">Mất nhiều thời gian để tạo ra được báo cáo cho HĐQT và số liệu từ nhiều nguồn không đồng nhất / <i>Long time to generate reports to submit BOD and the data from different sources are not consistent</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q6" name="q6" value="c">
+                                <input type="radio" id="q6" name="q6" value="Planning and budgeting jobs take great efforts and resources but efficiency does not correspond">
                                 <span class="label">Tốn nhiều công sức nguồn lực cho việc hoạch định kế hoạch và lên ngân sách nhưng không hiệu quả không tương ứng / <i>Planning and budgeting jobs take great efforts and resources but efficiency does not correspond</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -320,21 +324,21 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q7" name="q7" value="a">
+                                <input type="radio" id="q7" name="q7" value="Increasing productivity and collaboration among departments with minimal human errors">
                                 <span class="label">Tăng năng suất làm việc và sự hợp tác giữa các phòng ban với sai sót tối thiểu do con người / <i>Increasing productivity and collaboration among departments with minimal human errors</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q7" name="q7" value="b">
+                                <input type="radio" id="q7" name="q7" value="Facilitating WFH and reducing dependency on office space">
                                 <span class="label">Tạo điều kiện thuận lợi cho WFH và giảm sự phụ thuộc vào không gian văn phòng / <i>Facilitating WFH and reducing dependency on office space</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q7" name="q7" value="c">
+                                <input type="radio" id="q7" name="q7" value="Making internal reports more meaningful and powerful by visualizing data">
                                 <span class="label">Xuất báo cáo nội bộ có giá trị hơn về số liệu và rõ ràng hơn bằng trực quan hóa / <i>Making internal reports more meaningful and powerful by visualizing data</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -357,14 +361,14 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q8" name="q8" value="a">
+                                <input type="radio" id="q8" name="q8" value="We revise the reports and then set calls / send emails to align the new reports version with other departments">
                                 <span class="label">Chúng tôi điều chỉnh bằng cách thiết lập những cuộc gọi hoặc emails để kiểm chứng thông tin số liệu / <i>We revise the reports and then set calls / send emails to align the new reports version with other departments</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q8" name="q8" value="b">
+                                <input type="radio" id="q8" name="q8" value="We have a system where all departments share 1 source of data so no discrepancies">
                                 <span class="label">Chúng tôi có hệ thống mà hệ thống mà tất cả các bộ phận sử dụng 1 nguồn dữ liệu nên không có sự khác biệt số liệu / <i>We have a system where all departments share 1 source of data so no discrepancies</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -387,28 +391,28 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q9" name="q9" value="a">
-                                <span class="label">Tất nhiên chúng tôi có / <i>Of course, we have</i></span>
+                                <input type="radio" id="q9" name="q9" value="Of course, we do">
+                                <span class="label">Tất nhiên chúng tôi có / <i>Of course, we do</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q9" name="q9" value="b">
+                                <input type="radio" id="q9" name="q9" value="Still under discussion, not finalized yet">
                                 <span class="label">Hiện tại vẫn trong quá trình thảo luận / <i>Still under discussion, not finalized yet</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q9" name="q9" value="c">
+                                <input type="radio" id="q9" name="q9" value="Tight budget for digital technology in 2023">
                                 <span class="label">Ngân sách kinh phí hạn chế cho việc chuyển đổi số năm 2023 / <i>Tight budget for digital technology in 2023</i></span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q9" name="q9" value="d">
+                                <input type="radio" id="q9" name="q9" value="No, we do not have a budget for digital technology in 2023">
                                 <span class="label">Không, hiện tại chúng tôi không có ngân sách đầu tư cho chuyển đổi số năm 2023 / <i>No, we do not have a budget for digital technology in 2023</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -427,18 +431,18 @@
                 </div>
                 <br>
                 <div class = "question" id = "q10">
-                    <p> 10. Quý anh chị có nghĩ rằng hệ thống ERP sẽ cải thiện  sự hợp tác giữa các phòng ban nhịp nhàng hơn và nâng cao hiệu quả quản lý? / <i>Do you think an ERP system will improve the cooperation among departments smoothly and boost management efficiency?</i></p>
+                    <p> 10. Bạn có nghĩ rằng hệ thống ERP sẽ cải thiện  sự hợp tác giữa các phòng ban nhịp nhàng hơn và nâng cao hiệu quả quản lý? / <i>Do you think an ERP system will improve the cooperation among departments smoothly and boost management efficiency?</i></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q10" name="q10" value="a">
+                                <input type="radio" id="q10" name="q10" value="Yes, the software is beneficial to our business">
                                 <span class="label">Tôi nghĩ phần mềm sẽ giúp ích cho doanh nghiệp / <i>Yes, the software is beneficial to our business</i> </span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q10" name="q10" value="b">
+                                <input type="radio" id="q10" name="q10" value="No, the software is not beneficial to our business">
                                 <span class="label">Không, tôi không nghĩ nó hữu ích / <i>No, the software is not beneficial to our business</i></span>
                                 <span class="checkmark"></span>
                             </label>
@@ -451,14 +455,14 @@
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q11" name="q11" value="a">
+                                <input type="radio" id="q11" name="q11" value="Definitely">
                                 <span class="label">Đương nhiên / <i>Definitely</i> </span>
                                 <span class="checkmark"></span>
                             </label>
                         </div>
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
-                                <input type="radio" id="q11" name="q11" value="b">
+                                <input type="radio" id="q11" name="q11" value="No">
                                 <span class="label">Không / <i>No</i> </span>
                                 <span class="checkmark"></span>
                             </label>
@@ -482,6 +486,8 @@
             <br>
         </div>
     </section>
-    
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>

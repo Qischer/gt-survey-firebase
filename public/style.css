@@ -14,15 +14,15 @@ body {
 
 
 section{
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.space {
+/* .space {
   min-height: 30vh;
-}
+} */
 
 .logo {
   padding: 20px 30px;
@@ -40,14 +40,14 @@ section{
 
 .headline {
   /* margin-top: 5vh; */
-  margin-left: 10vh;
-  margin-right: 10vh;
+  /* margin-left: 10vh;
+  margin-right: 10vh; */
   justify-content: center;
 }
 
 section .headline {
   width: 80%;
-  height: 20vh;
+  /* height: 20vh; */
   display:block;
   margin: auto;
   padding-top: 10pt;
@@ -75,9 +75,7 @@ section .headline {
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-div #q1 {
-  /* border: solid red 1px; */
-}
+
 
 #q8 .btn_wrapper {
   margin-bottom: 10pt;
