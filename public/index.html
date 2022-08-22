@@ -38,7 +38,7 @@
     <section class ="intro mb-5">
         <div class ="content">
             <div class="logo">
-                <img src="images/grant-thornton.svg" alt="Grant Thornton Logo">
+                <img src="images/grant-thornton.svg" class = "img-fluid" alt="Grant Thornton Logo">
             </div>
             <div class = "headline">
                 <p> <b>Hiện tại, Grant Thornton tự hào là đối tác chiến lược của hai tập đoàn cung cấp phần mềm trên thế giới SAP và Oracle Netsuite cho việc triển khai phần mềm hoạch định tài nguyên doanh nghiệp ERP (Enterprise Resource Planning) cho các doanh nghiệp SMEs Việt Nam.
@@ -49,17 +49,18 @@
                         To thank you for taking the time to complete this survey, once this is done, you can immediately download KPIs Metrics from various industries including manufacturing, service, retail, wholesale, etc.If you would like to know your positions toward KPIs in the specialized industry, contact us. Our experts are willing to support you to define the answer.
                     </i>
                 </p>
-                <br>
+               
             </div>
         </div>
     </section>
-
+    
     <section>
         <span class="space"><br><br></span>
         <div class="reveal fade-bottom">
             <div class = "qlist">
                 <div class = "question" id = "q1">
                     <p>1. Doanh nghiệp bạn thuộc lĩnh vực nào? / <i>What industry does your company belong to? </i></p>
+                    <p class= "error" style = "display: none"></p>
                     <div class = "multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -116,6 +117,7 @@
                 <br>
                 <div class = "question" id = "q2">
                     <p>2. Công ty bạn hiện đang sử dụng bao nhiêu hệ thống quản lý? / <i>How many managing systems are there in your company?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -145,6 +147,7 @@
                     <p>3. Phần mềm công ty bạn hiện tại đang sử dụng cho việc theo dõi và quản lý doanh nghiệp?
                         / <i>What is the current system your company uses for tracking and managing your business?</i>
                         (Có thể chọn hơn 1 đáp án)</p>
+                        <p class = "error" style = "display: none"></p>
                         <div class = "multi-choice">
                             <div class = "btn_wrapper">
                                 <label class="custom-check-btn">
@@ -203,6 +206,7 @@
                 <br>
                 <div class = "question" id = "q4">
                     <p>4. Công ty bạn hiện tại có bao nhiêu nhân viên? / <i>How many employees does your company have?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -247,6 +251,7 @@
                 <br>
                 <div class = "question" id = "q5">
                     <p>5. Nếu doanh nghiệp bạn vẫn đang áp dụng chính sách WFH 1 phần, làm thế nào để bạn có thể theo dõi tiến độ công việc, năng suất và luồng thông tin? / <i>If your company still applies WFH policies partially to your employees, how do you keep track of work progress, productivity and the flow of information?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -284,6 +289,7 @@
                 <br>
                 <div class = "question" id = "q6">
                     <p>6. Khó khăn và thách thức lớn nhất doanh nghiệp bạn đang đối mặt là gì? / <i>What is the biggest challenge in your business operation?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -321,6 +327,7 @@
                 <br>
                 <div class = "question" id = "q7">
                     <p>7. Trong năm tài chính sắp tới, doanh nghiệp bạn mong muốn tập trung cải thiện điều gì? / <i>For the new fiscal year plan, what are the areas your company wants to take for significant improvement?</i> </p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -358,6 +365,7 @@
                 <br>
                 <div class = "question" id = "q8">
                     <p>8. Khi có sự khác biệt giữa dữ liệu đầu ra và đầu vào hoặc báo cáo của phòng ban và báo cáo của HĐQT, thì công ty của bạn sẽ điều chỉnh như thế nào? / <i>If there are discrepancies between output and input data or departmental reports and BOD reports, how does your company reconcile?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -388,6 +396,7 @@
                 <br>
                 <div class = "question" id = "q9">
                     <p>9. Năm 2023, công ty của bạn có chuẩn bị ngân sách để triển khai hoặc nâng cao công nghệ kỹ thuật số không? / <i>Does your company prepare a budget for implementing or enhancing digital technology in 2023?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -432,6 +441,7 @@
                 <br>
                 <div class = "question" id = "q10">
                     <p> 10. Bạn có nghĩ rằng hệ thống ERP sẽ cải thiện  sự hợp tác giữa các phòng ban nhịp nhàng hơn và nâng cao hiệu quả quản lý? / <i>Do you think an ERP system will improve the cooperation among departments smoothly and boost management efficiency?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -451,7 +461,8 @@
                 </div>
                 <br>
                 <div class = "question" id = "q11">
-                    <p>11. Bạn có muốn có một cuộc hẹn tiếp theo cho thảo luận? / <i>Would you like to have a follow-up appointment?</i></p>
+                    <p >11. Bạn có muốn có một cuộc hẹn tiếp theo cho thảo luận? / <i>Would you like to have a follow-up appointment?</i></p>
+                    <p class = "error" style = "display: none"></p>
                     <div class ="multi-choice">
                         <div class = "btn_wrapper">
                             <label class="custom-radio-btn">
@@ -478,9 +489,11 @@
                     <label for="lname">Đơn vị Công Tác / <i>Your company</i></label>
                     <input type="text" id="division" name="division"><br><br>
                     <label for="email">Email</label>
+                    <p id = "email-validation" style = "display:none; margin: 10px 20px 10px 0px; font-weight: bold"></p>
                     <input type="text" id="email" name="email"><br><br>
-                    <label for="email">Contact number / Sdt liên lạc</label>
-                    <input type="text" id="sdt" name="sdt"><br><br>
+                    <label for="sdt">Contact number / Sdt liên lạc</label>
+                    <p id = "number-validation" style = "display:none; margin: 10px 20px 10px 0px; font-weight: bold"></p>
+                    <input type="text" id="sdt" name="sdt" placeholder = "84 xxx-xxx-xxx"><br><br>
                     <button id ="submit">SUBMIT<br>
             </div>
             <br>

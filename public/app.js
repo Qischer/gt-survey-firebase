@@ -25,7 +25,6 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 
-
 //Authentication
 onAuthStateChanged(auth, user =>{
     if (user) {
@@ -36,8 +35,38 @@ onAuthStateChanged(auth, user =>{
 });
 
 const res = document.getElementsByName("qlist");
-
 const btn = document.getElementById("submit");
+
+//verify phone number 
+const verifyPhoneNumber = (input) => {
+    // var ver_phone = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+
+    var ver_phone = /^\(?(?:\+?(\d{1,3}))?[- ]?(\d{3})[- ]?(\d{3})[- ]?(\d{3,4})$/;
+    return ver_phone.test(input)  
+}
+
+//verify email
+const verifyEmail = (input) => {
+    let num = 0;
+    for (var i = 0; i < input.length; i++) {
+
+        if (input.charAt(i) === "@") {
+            num++;
+        }
+    }
+    var end = input.substring(input.lastIndexOf("@") + 1);
+    if (num == 1) {
+        if (end === "gmail.com" || end ==="yahoo.com" || end === "yahoo.com.vn" || end === "hotmail.com") {
+            return true;
+        }
+    }
+    return false;
+}
+const emailAndPhoneNumberStyle = (input, noti)=> {
+    input.style.display = "block";
+    input.style.color = "red";
+    input.innerHTML = "Please type in the correct " + noti;
+}
 
 btn.addEventListener("click", async (e) => {
 
@@ -50,21 +79,45 @@ btn.addEventListener("click", async (e) => {
     let entry = {};
     var check = true;
 
-    if(name == "" || email == "" || division == "" || sdt == "") {
+    if (name == "" || email == "" || division == "" || sdt == "" ) {
         document.getElementById("info_box").style.border = "solid red 1px";
         check = false;
-    } else {
-        check = true;
+    }  else {
+        var phone_number_noti = document.getElementById("number-validation");
+        var email_noti = document.getElementById("email-validation");
+
+        if (!verifyPhoneNumber(sdt) || !verifyEmail(email)){
+
+            if (!verifyPhoneNumber(sdt)) {
+                emailAndPhoneNumberStyle(phone_number_noti, "phone number");
+            } else {
+                phone_number_noti.style.display = "none";
+            }
+            if (!verifyEmail(email)) {
+                emailAndPhoneNumberStyle(email_noti, "email")
+            } else {
+                email_noti.style.display = "none";
+            }
+            check = false;
+           
+        } else {
+            phone_number_noti.style.display = "none";
+            email_noti.style.display = "none";
+            check = true;
+            document.getElementById("info_box").style.border = "none";
+            
+        
+        }
     }
+    var error = document.getElementsByClassName("error");
     for (var i = 1; i <= qnum ; i++) {
         const elementID = 'q' + i;
         const question = document.getElementsByName(elementID);
         var answered = false;
-        var num = 0;
         // console.log(elementID, question);
         for (var response of question) {
             if (response.checked) {
-                // console.log("response: " + response.value)
+                console.log("response: " + response.value)
                 if (response.value == "other")
                     entry[i] = "Other: " + document.getElementById(elementID + "_text").value;
                 else
@@ -74,9 +127,15 @@ btn.addEventListener("click", async (e) => {
         }
 
         if (!answered) {
-            document.getElementById(elementID).style.border = "solid red 1px";
+            var element = document.getElementById(elementID);
+            element.style.border = "solid red 1px";
+            error[i - 1].style.color = "red";
+            error[i - 1].innerHTML = "Missing required fields";
+            error[i - 1].style.display = "inline";
+            error[i - 1].style.padding = "0px 20px";
         } else {
             document.getElementById(elementID).style.border = "";
+            error[i - 1].style.display = "none"
 
         }
         check &= answered;

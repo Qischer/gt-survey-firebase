@@ -15,7 +15,7 @@ body {
 
 section{
   /* min-height: 100vh; */
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
 }
@@ -30,7 +30,8 @@ section{
 }
 
 .logo img {
-  max-height: 100px;
+  /* max-height: 100px; */
+  
 }
 
 .qlist {
@@ -38,15 +39,15 @@ section{
     align-items: center;
 }
 
-.headline {
-  /* margin-top: 5vh; */
-  /* margin-left: 10vh;
-  margin-right: 10vh; */
+/* .headline {
+  margin-top: 5vh;
+  margin-left: 10vh;
+  margin-right: 10vh;
   justify-content: center;
-}
+} */
 
 section .headline {
-  width: 80%;
+  /* width: 80%; */
   /* height: 20vh; */
   display:block;
   margin: auto;
@@ -63,10 +64,10 @@ section .headline {
 }
 
 .question {
-    width: 80%;
-    height: auto;
+    /* width: 80%; */
+    /* height: auto; */
     display:block;
-    margin: auto;
+    /* margin: auto; */
     background-color: #ffffff;
     border-radius: 10px;
     justify-content: center;
@@ -96,7 +97,7 @@ section .headline {
 }
 
 .submit {
-  width: 80%;
+  /* width: 80%; */
   height: auto;
   display:block;
   margin: auto;
@@ -124,7 +125,7 @@ section .headline {
 
 .multi-choice {
   margin: 0px 20px 0px 20px;
-  padding: 30px 10px 30px 10px;
+  padding: 0px 10px 30px 10px;
   /* display: flex; */
 }
 
