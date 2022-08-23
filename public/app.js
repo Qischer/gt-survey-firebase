@@ -56,7 +56,7 @@ const verifyEmail = (input) => {
     }
     var end = input.substring(input.lastIndexOf("@") + 1);
     if (num == 1) {
-        if (end === "gmail.com" || end ==="yahoo.com" || end === "yahoo.com.vn" || end === "hotmail.com") {
+        if (end !== "gmail.com" && end !=="yahoo.com" & end !== "yahoo.com.vn" & end !== "hotmail.com") {
             return true;
         }
     }
@@ -94,7 +94,7 @@ btn.addEventListener("click", async (e) => {
                 phone_number_noti.style.display = "none";
             }
             if (!verifyEmail(email)) {
-                emailAndPhoneNumberStyle(email_noti, "email")
+                emailAndPhoneNumberStyle(email_noti, "type of email")
             } else {
                 email_noti.style.display = "none";
             }
@@ -114,17 +114,31 @@ btn.addEventListener("click", async (e) => {
         const elementID = 'q' + i;
         const question = document.getElementsByName(elementID);
         var answered = false;
+        let num = 0;
         // console.log(elementID, question);
+        if (i == 3) {
+            var array = [];
+        }
         for (var response of question) {
+           
             if (response.checked) {
-                console.log("response: " + response.value)
-                if (response.value == "other")
+                
+                if  (response.value == "other") {
                     entry[i] = "Other: " + document.getElementById(elementID + "_text").value;
-                else
-                    entry[i] = response.value;
+            } else {
+                    if (i == 3) {
+                        array.push(response.value);
+                        entry[i] = array;
+                        console.log("entry: " + entry[i]);
+                    } else {
+                        entry[i] = response.value;
+                    }
+                    
                 answered = true;
             }
         }
+    }
+    console.log("num: " + num);
 
         if (!answered) {
             var element = document.getElementById(elementID);
