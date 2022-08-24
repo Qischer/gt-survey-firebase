@@ -134,8 +134,8 @@ btn.addEventListener("click", async (e) => {
                         entry[i] = response.value;
                     }
                     
-                answered = true;
             }
+            answered = true;
         }
     }
     console.log("num: " + num);
